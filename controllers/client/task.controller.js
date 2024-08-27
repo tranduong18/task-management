@@ -95,3 +95,20 @@ module.exports.changeStatus = async (req, res) => {
         });
     }
 }
+
+// [POST] /tasks/create
+module.exports.create = async (req, res) => {
+    try {
+        const task = new Task(req.body);
+        await task.save();
+
+        res.json({
+            message: "Tạo công việc thành công!",
+            task: task
+        });
+    } catch (error) {
+       res.json({
+        message: "Not Found"
+       }) 
+    }
+}
