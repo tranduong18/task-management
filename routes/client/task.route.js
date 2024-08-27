@@ -11,4 +11,6 @@ router.patch("/change-status", controller.changeStatus);
 
 router.post("/create", controller.create);
 
+router.patch("/edit/:id", controller.editPatch);
+
 module.exports = router;
